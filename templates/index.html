@@ -1,0 +1,45 @@
+<!--%%writefile templates/index.html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+  </head>
+  <body>
+	<h1>Proyecto Analitica Predictiva</h1>
+    <nav>
+      <p>Seleccione un ciudad:</p>
+      <select id="region" name="region"  onchange="selectPlot()">
+                <option value="Bogotá">Bogotá</option>
+                <option value="Medellin">Medellin</option>
+                <option value="Cali">Cali</option>
+                <option value="Barranquilla">Barranquilla</option>
+                <option value="Cartagena">Cartagena</option>
+      </select>
+    </nav>
+
+    <div>
+      <div class="myImage" id="Bogotá"   style="display:block"> <img src="C:\Users\eduar\Desktop\N.Amer.png"   alt="Bogotá">   </div>
+      <div class="myImage" id="Medellin" style="display:none"> <img src="C:\Users\eduar\Desktop\med.png"   alt="Medellin">   </div>
+      <div class="myImage" id="Asia"     style="display:none">  <img src="figs/Asia.png"     alt="Asia">     </div>
+      <div class="myImage" id="S.Amer"   style="display:none">  <img src="figs/S.Amer.png"   alt="S.Amer">   </div>
+      <div class="myImage" id="Oceania"  style="display:none">  <img src="figs/Oceania.png"  alt="Oceania">  </div>
+      <div class="myImage" id="Africa"   style="display:none">  <img src="figs/Africa.png"   alt="Africa">   </div>
+      <div class="myImage" id="Mid.Amer" style="display:none">  <img src="figs/Mid.Amer.png" alt="Mid.Amer"> </div>
+    </div>
+
+    <script>
+      function selectPlot() {
+        var region = document.getElementById("region").value;
+        var images = document.getElementsByClassName("myImage");
+        for (var i = 0; i < images.length; i++) {
+          if (images[i].id == region) {
+            images[i].style.display = "block"
+          }else{
+            images[i].style.display = "none"
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
