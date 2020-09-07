@@ -43,7 +43,7 @@ Para realizar una descripción de los brotes se realiza una lista que tenga cada
 #### **curva epidemiologica**
 Con esta lista se puede caracterizar el brote realizando un **curva epidemiologica**, en esta curva se muestran los números de casos por la fecha de inicio de la enfermedad o otra unidad de medida de tiempo, adicionalmente se colorean dependiendo de tipo de caso (sospechoso, probable o confirmado).
 
-![curva epidemilogica](./imgs/curva-epi.jpg)
+![curva epidemilogica](imgs/curva-epi.jpg)
 
 La forma de la curva da una idea de la causa del brote, por ejemplo la siguiente curva es característica de un ***brote de fuente puntual***, donde, todos se exponen a la enfermedad al mismo tiempo, se tiene un rápido aumento de casos, seguido por un largo y lento descenso. Generalmente estas curvas tienen un distribución log-normal.
 
