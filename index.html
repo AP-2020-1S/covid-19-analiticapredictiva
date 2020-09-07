@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+	<style>
+	.h2 {
+		text-align: center; color: black ;
+		}
+	.topright {
+       position: absolute;
+       right: 0;
+       top: 1;
+       display: block;
+       height: 125px;
+       width: 125px;
+       background: url(TRbanner.gif) no-repeat;
+       text-indent: -999em;
+       text-decoration: none;
+	   }
+    </style>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <body>
+  
+	
+    
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1 class="h2">Proyecto Analítica Predictiva</h1>
+        <h2 class="h2">CASOS DE CORONAVIRUS (COVID-19) EN LAS PRINCIPALES CIUDADADES DE COLOMBIA</h2>
+    </div>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width: 100%;padding: 5px 45%;">
+        <div>
+            <select id="region" name="region" class="custom-select-sm" onchange="selectPlot()" style="width: 250px;">
+				<option name="region" selected="true" >seleccione la ciudad</option>
+                <option value="Bogotá">Bogotá</option>
+                <option value="Medellin">Medellin</option>
+                <option value="Cali">Cali</option>
+                <option value="Barranquilla">Barranquilla</option>
+                <option value="Cartagena">Cartagena</option>
+      </select>
+        </div>  
+
+      
+
+    </nav>
+	<div class="card" style="min-height: 500px;">
+       <TABLE style="margin: auto; width: 85%;"> 
+
+         <TR> 
+            <div class="myImage" id="sel">
+
+            </div> 
+         <TD> 
+             <div class="myImage" id="Bogotá" style="display:none"> 
+                <img src="/img/Bogotá D.C.-Arima-activos.png" alt="ArimaActivos"   title="ARIMA-ACTIVOS"  > 
+            </div> </TD>
+         <TD> 
+             <div class="myImage" id="Bogotá" style="display:none"> 
+                <img src="/img/Bogotá D.C.-Arima-fallecidos.png"  alt="ArimaFallecidos"   title="ARIMA_FALLECIDOS" > 
+            </div> 
+        </TD>
+		 <tr>
+
+         <TD> 
+             <div class="myImage" id="Bogotá" style="display:none"> 
+                <img src="/img/Bogotá D.C.-Arima-recuperado.png"      alt="BogotaRecuperado"  title="ArimaRecuperado" > 
+            </div> 
+        </TD>
+
+		 <TD> 
+             <div class="myImage" id="Bogotá" style="display:none"> 
+                <img src="/img/Bogotá D.C.-SIR-activo.png"      alt="BogotaSIRActivo"  title="SIR-activo" > 
+            </div> 
+        </TD>
+		 </tr>
+		 <tr>
+		 <TD> 
+             <div class="myImage" id="Bogotá" style="display:none"> 
+                <img src="/img/Bogotá D.C.-SIR-fallecidos.png"      alt="BogotaSIRFallecido"  title="SIRFallecido" > 
+            </div> 
+        </TD>
+		 <TD> 
+             <div class="myImage" id="Bogotá" style="display:none"> 
+                <img src="/img/Bogotá D.C.-SIR-recuperado.png"      alt="BogotaSIRRecuperado"  title="SIRRecuperado" >
+             </div> 
+        </TD>
+         </tr>
+         
+		 <TD> 
+             <div class="myImage" id="Medellin" style="display:none"> 
+                <img src="/img/Medellín-Arima-activos.png" alt="ActivosMedellinCortoPlazo"  title="Activos Corto Plazo" >
+             </div>
+        </TD> 
+
+         <TD> 
+             <div class="myImage" id="Medellin" style="display:none">
+                 <img src="/img/Medellín-Arima-fallecidos.png"   alt="FallecidosMedellinCortoPlazo"  title="Fallecidos Corto Plazo" >
+                 </div> 
+        </TD>
+
+		 <tr>
+		 <TD>
+              <div class="myImage" id="Medellin" style="display:none"> 
+                <img src="/img/Medellín-Arima-recuperado.png"      alt="RecuperadoMedCortoPlazo"  title="Recuperados Corto Plazo" > 
+            </div> 
+        </TD>
+         <TD> <div class="myImage" id="Medellin" style="display:none">
+             <img src="/img/Medellín-SIR-activos.png"      alt="ActivosSIR"  title="ACTIVOS Largo Plazo" >
+             </div> 
+        </TD>
+
+		 </tr>
+		 <tr>
+		 <TD> 
+             <div class="myImage" id="Medellin" style="display:none">
+                 <img src="/img/Medellín-SIR-fallecidos.png"      alt="MedellinFallecidosSIR"  title="Fallecidos Largo Plazo" >
+            </div> 
+        </TD>
+
+         <TD> <div class="myImage" id="Medellin" style="display:none">
+             <img src="/img/Medellín-SIR-recuperado.png"      alt="MedellinSIRRecuperados"  title="Recuperados Largo Plazo" >
+            </div> 
+        </TD>
+
+		 </tr>
+		 <TD> 
+             <div class="myImage" id="Cali" style="display:none">
+                 <img src="/img/Cali-Arima-activos.png"alt="CaliArimaActivos"  title="Activos Corto Plazo" > 
+                </div>
+             </TD> 
+         <TD>
+              <div class="myImage" id="Cali" style="display:none"> <img src="/img/Cali-Arima-fallecidos.png"  alt="CaliARIMAFallecidos"  title="Fallecidos Corto Plazo" > 
+            </div> 
+        </TD>
+
+		 <tr>
+         <TD> 
+            <div class="myImage" id="Cali" style="display:none">
+             <img src="/img/Cali-Arima-recuperado.png"alt="CaliArimaRecuperados"  title="Recuperados Corto Plazo" > 
+            </div> 
+        </TD> 
+         <TD> 
+             <div class="myImage" id="Cali" style="display:none"> 
+                <img src="/img/Cali-SIR-activos.png"      alt="CaliSIRActivos"  title="Activos Largo Plazo" > 
+        </div>
+        </TD>
+		 </tr>
+		 <tr>
+		 <TD> 
+             <div class="myImage" id="Cali" style="display:none">
+                 <img src="/img/Cali-SIR-fallecidos.png" alt="CaliSIRFallecidos"  title="Falleciso Largo Plazo" >
+                 </div>
+             </TD> 
+         <TD>
+              <div class="myImage" id="Cali" style="display:none"> 
+                <img src="/img/Cali-SIR-recuperado.png"   alt="CaliSIRRecuperado"  title="Recuperado Largo Plazo" > 
+            </div> 
+        </TD>
+
+		 </tr>
+		 <TD> 
+             <div class="myImage" id="Barranquilla" style="display:none">
+                 <img src="/img/Barranquilla-Arima-activos.png" alt="BarranquillaActivos"  title="Activos" >
+                 </div> 
+            </TD> 
+         <TD> 
+             <div class="myImage" id="Barranquilla" style="display:none"> 
+                <img src="/img/Barranquilla-Arima-fallecidos.png" alt="BarranquillaFallecidos"  title="Fallecidos" >
+             </div> 
+        </TD>
+
+		 <tr>
+		 <TD>
+              <div class="myImage" id="Barranquilla" style="display:none"> 
+                <img src="/img/Barranquilla-Arima-recuperado.png" alt="BarranquillaRecuperado"  title="Recuperado" >
+             </div> 
+            </TD> 
+         <TD> 
+             <div class="myImage" id="Barranquilla" style="display:none">
+                 <img src="/img/Barranquilla-SIR-activos.png"      alt="BarranquillaSIRActivos"  title="SIR-activos" >
+                 </div>
+                 </TD>
+		 </tr>
+		<tr>
+		 <TD> 
+             <div class="myImage" id="Barranquilla" style="display:none"> 
+                <img src="/img/Barranquilla-SIR-fallecidos.png"alt="BarranquillaSIRFallecidos"  title="SIR-fallecidos" > 
+            </div> 
+        </TD> 
+
+         <TD> <div class="myImage" id="Barranquilla" style="display:none"> 
+            <img src="/img/Barranquilla-SIR-recuperado.png"      alt="BarranquillaSIRRecuperado"  title="SIR-recuperado" >
+         </div>
+         </TD>
+		 </tr>
+		 <TD> 
+             <div class="myImage" id="Cartagena" style="display:none"> 
+                <img src="/img/Cartagena de Indias-Arima-activos.png" alt="CartagenaARIMActivos"  title="Activos Corto Plazo" > 
+            </div>
+         </TD> 
+
+         <TD> 
+             <div class="myImage" id="Cartagena" style="display:none">
+             <img src="/img/Cartagena de Indias-Arima-fallecidos.png"  alt="CartagenaARIMAFallecidos"  title=" Fallecidos Corto Plazo" >
+             </div> </TD>
+		 <tr>
+
+		 <TD> 
+             <div class="myImage" id="Cartagena" style="display:none">
+                 <img src="/img/Cartagena de Indias-Arima-recuperado.png"alt="CartagenaARIMARecuperado"  title="Recuperados Corto Plazo" >
+                 </div>
+             </TD> 
+
+         <TD> <div class="myImage" id="Cartagena" style="display:none">
+             <img src="/img/Cartagena de Indias-SIR-activos.png"      alt="CartagenaActivosSIRLP"  title="ACTIVOS Largo Plazo" > 
+            </div>
+         </TD>
+		 </tr>
+		 <tr>
+         <TD> <div class="myImage" id="Cartagena" style="display:none"> 
+            <img src="/img/Cartagena de Indias-SIR-fallecidos.png"alt="CartagenaSIRFallecidos"  title="Fallecidos Largo Plazo" >
+         </div> </TD> 
+         <TD> <div class="myImage" id="Cartagena" style="display:none">
+             <img src="/img/Cartagena de Indias-SIR-recuperado.png"      alt="CartagenaRecuperadosSIRLP"  title="Recuperados Largo Plazo" >
+             </div> </TD>
+		 </tr>
+         </TR> 
+         </TABLE>
+	</div>
+
+    <div>
+
+    <script>
+      function selectPlot() {
+        var region = document.getElementById("region").value;
+        var images = document.getElementsByClassName("myImage");
+        for (var i = 0; i < images.length; i++) {
+          if (images[i].id == region) {
+            images[i].style.display = "block"
+          }else{
+            images[i].style.display = "none"
+          }
+        }
+      }
+    </script>
+	
+    
+    <div class="jumbotron text-center" style="margin-bottom:0;">
+        <p align="left">
+            <font size=2>Elaborado por los estudiates de la espacializaión y maestria en Analítica:</font>
+        
+            <ul id="lista">
+                     <li>Luis Gabriel Diaz Fonseca</li>
+                     <li>Diego Camilo Mayorga Ballesteros</li>
+                     <li>Cristian Camilo Londoño Ramirez</li>
+                     <li>Eduardo Alberto González Escobar</li>
+            </ul>
+
+        </p>
+            
+      </div>
+      
+  </body>
+</html>
