@@ -76,3 +76,10 @@ Para poder comprender completamente la dinámica del brote, es necesario tener e
 <br>
 
 En conclusión, las características mas importantes que se deben tener en cuanta en la comprensión de los datos y la modelacion son el ***numero de reducción*** y el ***tiempo de la generación***, los cuales son difíciles de definir  y varían en el tiempo, por tal motivo para el análisis se debe tener en cuanta no solo los datos de los casos, sino también las medidas implementadas por el gobierno como el distanciamiento social o las cuarentenas y como esto afecta la dinámica del brote.
+
+## **Metodologia**
+
+Se implementara la metodologia cris-dm que se puede resumir con el siguiente grafico
+<p align="center">
+  <img src="./img/motodologia.jpg"  alt= "dinámica del brote"/>
+</p>
