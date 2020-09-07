@@ -76,10 +76,3 @@ Para poder comprender completamente la dinámica del brote, es necesario tener e
 <br>
 
 En conclusión, las características mas importantes que se deben tener en cuanta en la comprensión de los datos y la modelacion son el ***numero de reducción*** y el ***tiempo de la generación***, los cuales son difíciles de definir  y varían en el tiempo, por tal motivo para el análisis se debe tener en cuanta no solo los datos de los casos, sino también las medidas implementadas por el gobierno como el distanciamiento social o las cuarentenas y como esto afecta la dinámica del brote.
-
-#### ***Situación en Colombia***
-
-> hacer una cronología de la epidemia en Colombia y en las ciudades, teniendo en cuanta la aparición de los primeros casos y  las medidas que se han tomado especificando el tiempo y el lugar 
-
-### **Objetivos del proyecto de analítica**
-### **Plan del proyecto**
